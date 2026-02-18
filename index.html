@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textile Hosiery Consultancy Services - Expert Technical Consulting</title>
+    <style>
+        /* --- MODERN BRAND STYLE --- */
+        :root {
+            --bg-body: #f8fafc;
+            --bg-white: #ffffff;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --accent-blue: #3b82f6;
+            --accent-indigo: #6366f1;
+            --accent-teal: #14b8a6;
+            --border-color: #e2e8f0;
+            --btn-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        
+        body { 
+            line-height: 1.7; 
+            color: var(--text-main); 
+            background-color: var(--bg-body); 
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* --- LAYOUT & UTILITIES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 30px; }
+        .section { padding: 100px 0; position: relative; }
+        .text-center { text-align: center; }
+        
+        h1, h2, h3, h4 { color: var(--text-heading); margin-bottom: 1rem; line-height: 1.2; font-weight: 700; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.5rem; }
+        h4 { font-size: 1.2rem; }
+        p { margin-bottom: 1.5rem; color: var(--text-main); font-size: 1.05rem; }
+
+        .btn { 
+            display: inline-block; 
+            padding: 16px 40px; 
+            background: var(--btn-gradient);
+            background-size: 200% 200%;
+            color: white; 
+            text-decoration: none; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease; 
+            border: none; 
+            cursor: pointer; 
+            border-radius: 8px;
+            box-shadow: var(--shadow-md);
+            animation: gradient-shift 3s ease infinite;
+        }
+        .btn:hover { 
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* --- HEADER WITH LOGO --- */
+        header { 
+            background: rgba(255,255,255,0.95); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        nav { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            height: 90px; 
+        }
+        
+        .logo-container { 
+            display: flex; 
+            align-items: center; 
+            gap: 15px; 
+        }
+        
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .logo-text-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text { 
+            font-size: 1.4rem; 
+            font-weight: 800; 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        
+        .logo-tagline {
+            font-size: 0.7rem;
+            color: var(--text-main);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+        
+        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--text-main); 
+            font-size: 0.95rem; 
+            font-weight: 600; 
+            transition: all 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 50%;
+            background: var(--btn-gradient);
+            transition: all 0.3s;
+            transform: translateX(-50%);
+        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--text-heading); }
+
+        /* --- HERO SECTION --- */
+        .hero { 
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 120px 20px; 
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="white" stroke-opacity="0.05" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content { position: relative; z-index: 1; animation: fadeInUp 0.8s ease; }
+        .hero h1 { 
+            font-size: 3.2rem; 
+            max-width: 900px; 
+            margin: 0 auto 20px auto; 
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .hero h2 { 
+            font-size: 1.4rem; 
+            font-weight: 400; 
+            color: rgba(255,255,255,0.95); 
+            margin-bottom: 50px;
+        }
+        
+        .hero .btn {
+            background: white;
+            color: #667eea;
+            font-size: 1.05rem;
+            animation: none;
+        }
+        .hero .btn:hover {
+            background: rgba(255,255,255,0.95);
+        }
+
+        /* --- INTRO SECTION --- */
+        .intro { 
+            background: linear-gradient(to bottom, white 0%, #f8fafc 100%);
+        }
+        .intro-content { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            text-align: center;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        .intro p { 
+            font-size: 1.25rem; 
+            line-height: 1.9;
+            color: var(--text-main);
+        }
+
+        /* --- STATS SECTION --- */
+        .stats {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .stat-item p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1.1rem;
+            margin: 0;
+        }
+
+        /* --- SERVICE CATEGORIES --- */
+        .services { background-color: white; }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .service-category {
+            margin-bottom: 80px;
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+            border-radius: 12px;
+            border-left: 5px solid #6366f1;
+        }
+
+        .category-header h3 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--text-heading);
+        }
+
+        .category-header p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin: 0;
+        }
+        
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
+            gap: 30px; 
+            margin-bottom: 40px;
+        }
+        
+        .service-card { 
+            background: white; 
+            padding: 35px 30px; 
+            border-radius: 12px;
+            border: 1px solid var(--border-color); 
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--btn-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+        
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .service-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: var(--shadow-lg);
+            border-color: transparent;
+        }
+        
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h4 { 
+            font-size: 1.25rem; 
+            margin-bottom: 12px;
+            color: var(--text-heading);
+        }
+        
+        .service-card p { 
+            font-size: 0.98rem; 
+            line-height: 1.7;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .service-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .service-card ul li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .service-card ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #6366f1;
+            font-weight: bold;
+        }
+
+        .value-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact { background: linear-gradient(to bottom, white 0%, #f8fafc 100%); }
+        
+        .contact-layout { 
+            display: flex; 
+            gap: 50px; 
+            flex-wrap: wrap; 
+            margin-top: 50px; 
+        }
+        
+        .contact-info { 
+            flex: 1; 
+            min-width: 300px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info ul {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .contact-info li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: var(--text-main);
+        }
+        
+        .contact-info li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+        }
+        
+        .contact-form { 
+            flex: 2; 
+            min-width: 300px;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .form-group { margin-bottom: 25px; }
+        .form-group label { 
+            display: block; 
+            margin-bottom: 10px; 
+            font-weight: 600; 
+            font-size: 0.95rem;
+            color: var(--text-heading);
+        }
+        
+        .form-input { 
+            width: 100%; 
+            padding: 14px 16px; 
+            border: 2px solid var(--border-color); 
+            background: var(--bg-body);
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-input:focus { 
+            outline: none;
+            border-color: #667eea;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        /* --- FOOTER --- */
+        footer { 
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1; 
+            padding: 60px 0 30px 0; 
+            text-align: center; 
+        }
+        
+        footer p { color: #cbd5e1; }
+        footer a { color: #60a5fa; text-decoration: none; transition: color 0.3s; }
+        footer a:hover { color: #93c5fd; }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.1rem; }
+            h2 { font-size: 1.8rem; }
+            .contact-layout { flex-direction: column; }
+            .services-grid { grid-template-columns: 1fr; }
+            .logo-text { font-size: 1.1rem; }
+            .logo-icon { width: 45px; height: 45px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <!-- Professional Textile Logo -->
+                    <svg class="logo-icon" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="60" cy="60" r="56" fill="url(#logoGradient)" opacity="0.1"/>
+                        <g opacity="0.4">
+                            <path d="M 30 40 Q 45 35, 60 40 T 90 40" stroke="url(#logoGradient)" stroke-width="2.5" fill="none"/>
+                            <path d="M 30 50 Q 45 45, 60 50 T 90 50" stroke="url(#logoGradient)" stroke-width="2.5" fill="none"/>
+                            <path d="M 30 60 Q 45 55, 60 60 T 90 60" stroke="url(#logoGradient)" stroke-width="2.5" fill="none"/>
+                            <path d="M 30 70 Q 45 65, 60 70 T 90 70" stroke="url(#logoGradient)" stroke-width="2.5" fill="none"/>
+                            <path d="M 30 80 Q 45 75, 60 80 T 90 80" stroke="url(#logoGradient)" stroke-width="2.5" fill="none"/>
+                        </g>
+                        <g>
+                            <line x1="60" y1="35" x2="60" y2="85" stroke="url(#logoGradient)" stroke-width="3" stroke-linecap="round"/>
+                            <circle cx="60" cy="32" r="4" fill="url(#accentGradient)"/>
+                            <circle cx="60" cy="88" r="4" fill="url(#accentGradient)"/>
+                        </g>
+                        <g opacity="0.6">
+                            <rect x="40" y="45" width="5" height="30" rx="1" fill="url(#logoGradient)"/>
+                            <rect x="52" y="48" width="5" height="24" rx="1" fill="url(#logoGradient)"/>
+                            <rect x="64" y="45" width="5" height="30" rx="1" fill="url(#logoGradient)"/>
+                            <rect x="76" y="48" width="5" height="24" rx="1" fill="url(#logoGradient)"/>
+                        </g>
+                        <circle cx="60" cy="60" r="52" fill="none" stroke="url(#logoGradient)" stroke-width="2.5" opacity="0.6"/>
+                        <path d="M 50 60 L 56 66 L 70 52" stroke="url(#accentGradient)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    
+                    <div class="logo-text-wrapper">
+                        <div class="logo-text">Textile Hosiery Consultancy Services</div>
+                        <div class="logo-tagline">Expert Technical Solutions</div>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Technical Consultancy for India's Hosiery & Textile Sector</h1>
+            <h2>Comprehensive solutions from production to market expansion</h2>
+            <a href="#contact" class="btn">Schedule a Consultation →</a>
+        </div>
+    </section>
+
+    <section id="about" class="section intro">
+        <div class="container intro-content">
+            <p>Textile Hosiery Consultancy Services empowers hosiery mills and textile MSMEs with end-to-end technical, regulatory, and strategic advisory. From lean manufacturing to digital transformation, we help you achieve 15-25% cost reduction, obtain certifications, and access government schemes—all while expanding into high-margin markets.</p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15-25%</h3>
+                    <p>Cost Reduction</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>MSME Clients</p>
+                </div>
+                <div class="stat-item">
+                    <h3>ZED/ISO</h3>
+                    <p>Certified Units</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Comprehensive Service Matrix</h2>
+                <p style="font-size: 1.15rem; color: var(--text-main); max-width: 800px; margin: 10px auto 0;">Four pillars of excellence designed specifically for Hosiery MSMEs</p>
+            </div>
+
+            <!-- CATEGORY 1: TECHNICAL & PRODUCTION CONSULTANCY -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>🔧 Technical & Production Consultancy</h3>
+                    <p>Core manufacturing process optimization for efficiency and quality</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="tech1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3b82f6"/>
+                                    <stop offset="100%" style="stop-color:#1d4ed8"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="20" y="30" width="60" height="40" rx="3" fill="url(#tech1)" opacity="0.2"/>
+                            <rect x="30" y="40" width="15" height="20" fill="url(#tech1)"/>
+                            <rect x="50" y="35" width="15" height="25" fill="url(#tech1)"/>
+                            <rect x="70" y="45" width="15" height="15" fill="url(#tech1)"/>
+                        </svg>
+                        <h4>Plant Layout & Modernization</h4>
+                        <p>Optimize your manufacturing floor for maximum efficiency</p>
+                        <ul>
+                            <li>Efficient floor plan design</li>
+                            <li>Material flow optimization</li>
+                            <li>Transition to computerized knitting</li>
+                            <li>Circular & flat knitting machines</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="tech2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                    <stop offset="100%" style="stop-color:#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="30" fill="url(#tech2)" opacity="0.2"/>
+                            <path d="M 40 50 L 47 57 L 60 40" stroke="url(#tech2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="url(#tech2)" stroke-width="2"/>
+                        </svg>
+                        <h4>Process Optimization</h4>
+                        <p>Standardize your production cycle for consistent quality</p>
+                        <ul>
+                            <li>Knitting-Dyeing-Finishing cycles</li>
+                            <li>Lead time reduction</li>
+                            <li>Defect minimization</li>
+                            <li>Quality standardization</li>
+                        </ul>
+                        <div class="value-badge">15-25% Cost Reduction</div>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="tech3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#14b8a6"/>
+                                    <stop offset="100%" style="stop-color:#059669"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="30" y="30" width="40" height="40" rx="5" fill="url(#tech3)" opacity="0.2"/>
+                            <circle cx="50" cy="50" r="12" fill="url(#tech3)"/>
+                            <path d="M 50 38 L 50 50 L 58 50" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h4>Machinery Selection & Sourcing</h4>
+                        <p>Right equipment within MSME budgets</p>
+                        <ul>
+                            <li>High-speed knitting machines</li>
+                            <li>Linkers & specialized equipment</li>
+                            <li>Relax dryers & compactors</li>
+                            <li>Budget-friendly solutions</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="tech4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b"/>
+                                    <stop offset="100%" style="stop-color:#d97706"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="25" fill="url(#tech4)" opacity="0.2"/>
+                            <path d="M 40 45 L 60 45 L 60 65 L 40 65 Z" fill="url(#tech4)"/>
+                            <path d="M 35 40 L 50 30 L 65 40" fill="url(#tech4)" opacity="0.5"/>
+                        </svg>
+                        <h4>Lean Manufacturing & Waste Management</h4>
+                        <p>Minimize waste, maximize profitability</p>
+                        <ul>
+                            <li>Lean techniques implementation</li>
+                            <li>Yarn wastage reduction</li>
+                            <li>Optimal fabric cutting (nesting)</li>
+                            <li>Zero-defect production</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="tech5" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#06b6d4"/>
+                                    <stop offset="100%" style="stop-color:#0891b2"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="25" y="25" width="50" height="50" rx="5" fill="url(#tech5)" opacity="0.2"/>
+                            <circle cx="40" cy="45" r="5" fill="url(#tech5)"/>
+                            <circle cx="60" cy="45" r="5" fill="url(#tech5)"/>
+                            <circle cx="40" cy="65" r="5" fill="url(#tech5)"/>
+                            <circle cx="60" cy="65" r="5" fill="url(#tech5)"/>
+                            <path d="M 40 45 L 60 45 M 40 65 L 60 65 M 40 45 L 40 65 M 60 45 L 60 65" stroke="url(#tech5)" stroke-width="2"/>
+                        </svg>
+                        <h4>Industry 4.0 / IoT Integration</h4>
+                        <p>Real-time monitoring for modern manufacturing</p>
+                        <ul>
+                            <li>Digital production monitoring</li>
+                            <li>Knitting efficiency tracking</li>
+                            <li>Automated quality control</li>
+                            <li>Data-driven decision making</li>
+                        </ul>
+                        <div class="value-badge">Smart Factory Solutions</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 2: QUALITY CONTROL & COMPLIANCE -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>✓ Quality Control & Compliance</h3>
+                    <p>Essential for export markets and organized retail partnerships</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="qual1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ef4444"/>
+                                    <stop offset="100%" style="stop-color:#dc2626"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="30" y="25" width="40" height="50" rx="3" fill="url(#qual1)" opacity="0.2"/>
+                            <rect x="35" y="35" width="30" height="4" fill="url(#qual1)"/>
+                            <rect x="35" y="45" width="30" height="4" fill="url(#qual1)"/>
+                            <rect x="35" y="55" width="20" height="4" fill="url(#qual1)"/>
+                            <circle cx="42" cy="37" r="2" fill="url(#qual1)"/>
+                        </svg>
+                        <h4>Testing Services Setup</h4>
+                        <p>In-house and third-party testing facilitation</p>
+                        <ul>
+                            <li>Mini-lab setup guidance</li>
+                            <li>Colorfastness testing</li>
+                            <li>GSM & shrinkage analysis</li>
+                            <li>pH level monitoring</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="qual2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981"/>
+                                    <stop offset="100%" style="stop-color:#059669"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="25" fill="url(#qual2)" opacity="0.2"/>
+                            <path d="M 35 50 L 45 60 L 65 40" stroke="url(#qual2)" stroke-width="4" fill="none" stroke-linecap="round"/>
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="url(#qual2)" stroke-width="2"/>
+                        </svg>
+                        <h4>ZED/ISO Certification</h4>
+                        <p>Zero Defect, Zero Effect certification support</p>
+                        <ul>
+                            <li>ZED certification guidance</li>
+                            <li>ISO standards implementation</li>
+                            <li>BIS compliance</li>
+                            <li>Government incentive access</li>
+                        </ul>
+                        <div class="value-badge">Enhanced Brand Trust</div>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="qual3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                    <stop offset="100%" style="stop-color:#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="30" y="30" width="40" height="40" rx="5" fill="url(#qual3)" opacity="0.2"/>
+                            <text x="50" y="60" text-anchor="middle" font-size="20" font-weight="bold" fill="url(#qual3)">OK</text>
+                        </svg>
+                        <h4>OEKO-TEX Certification</h4>
+                        <p>Chemical safety standards for global markets</p>
+                        <ul>
+                            <li>OEKO-TEX 100 guidance</li>
+                            <li>Chemical safety protocols</li>
+                            <li>Export market access</li>
+                            <li>International compliance</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="qual4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b"/>
+                                    <stop offset="100%" style="stop-color:#d97706"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="35" r="15" fill="url(#qual4)" opacity="0.2"/>
+                            <rect x="35" y="55" width="30" height="20" rx="3" fill="url(#qual4)"/>
+                            <path d="M 45 63 L 48 66 L 55 59" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h4>Social Compliance Audits</h4>
+                        <p>Prepare for international sourcing requirements</p>
+                        <ul>
+                            <li>BSCI audit preparation</li>
+                            <li>Sedex compliance</li>
+                            <li>Labor standards implementation</li>
+                            <li>International apparel sourcing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: FINANCIAL & GOVERNMENT SCHEMES -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>💰 Financial & Government Scheme Advisory</h3>
+                    <p>Access subsidies, credit facilities, and government support programs</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="fin1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3b82f6"/>
+                                    <stop offset="100%" style="stop-color:#1d4ed8"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="25" y="30" width="50" height="40" rx="3" fill="url(#fin1)" opacity="0.2"/>
+                            <path d="M 35 45 L 65 45 M 35 55 L 60 55 M 35 65 L 55 65" stroke="url(#fin1)" stroke-width="3" stroke-linecap="round"/>
+                        </svg>
+                        <h4>DPR Preparation</h4>
+                        <p>Detailed Project Reports for funding</p>
+                        <ul>
+                            <li>Bank loan applications</li>
+                            <li>Venture capital proposals</li>
+                            <li>Financial projections</li>
+                            <li>Business viability reports</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="fin2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981"/>
+                                    <stop offset="100%" style="stop-color:#059669"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="45" r="20" fill="url(#fin2)" opacity="0.2"/>
+                            <text x="50" y="52" text-anchor="middle" font-size="20" font-weight="bold" fill="url(#fin2)">₹</text>
+                            <path d="M 35 70 L 65 70" stroke="url(#fin2)" stroke-width="3"/>
+                        </svg>
+                        <h4>ATUFS Subsidy Support</h4>
+                        <p>Amended Technology Upgradation Fund Scheme</p>
+                        <ul>
+                            <li>Capital subsidy applications</li>
+                            <li>Machinery investment support</li>
+                            <li>Technology upgradation funds</li>
+                            <li>Government scheme navigation</li>
+                        </ul>
+                        <div class="value-badge">Subsidy Access</div>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="fin3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#6366f1"/>
+                                    <stop offset="100%" style="stop-color:#4f46e5"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="25" y="35" width="50" height="30" rx="5" fill="url(#fin3)" opacity="0.2"/>
+                            <circle cx="40" cy="50" r="8" fill="url(#fin3)"/>
+                            <circle cx="60" cy="50" r="8" fill="url(#fin3)"/>
+                            <path d="M 40 50 L 60 50" stroke="url(#fin3)" stroke-width="2"/>
+                        </svg>
+                        <h4>PM MITRA & Cluster Development</h4>
+                        <p>Join textile clusters for shared facilities</p>
+                        <ul>
+                            <li>Cluster membership assistance</li>
+                            <li>Common Facility Centers access</li>
+                            <li>Shared infrastructure benefits</li>
+                            <li>Collaborative growth</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="fin4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#ef4444"/>
+                                    <stop offset="100%" style="stop-color:#dc2626"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="30" y="30" width="40" height="40" rx="5" fill="url(#fin4)" opacity="0.2"/>
+                            <path d="M 40 50 L 47 57 L 60 44" stroke="url(#fin4)" stroke-width="3" fill="none"/>
+                        </svg>
+                        <h4>CLCSS & Payment Recovery</h4>
+                        <p>Credit-linked subsidies and dues recovery</p>
+                        <ul>
+                            <li>CLCSS application support</li>
+                            <li>Technology induction subsidies</li>
+                            <li>MSME Samadhaan filings</li>
+                            <li>Delayed payment recovery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY 4: MARKET EXPANSION & DIGITAL TRANSFORMATION -->
+            <div class="service-category">
+                <div class="category-header">
+                    <h3>🚀 Market Expansion & Digital Transformation</h3>
+                    <p>Shift from low-margin to high-margin goods through strategic positioning</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="mkt1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#06b6d4"/>
+                                    <stop offset="100%" style="stop-color:#0891b2"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="25" y="35" width="50" height="30" rx="3" fill="url(#mkt1)" opacity="0.2"/>
+                            <circle cx="40" cy="50" r="8" fill="url(#mkt1)"/>
+                            <circle cx="60" cy="50" r="8" fill="url(#mkt1)"/>
+                            <path d="M 40 50 L 50 40 L 60 50" stroke="url(#mkt1)" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h4>B2B/B2C Digital Onboarding</h4>
+                        <p>Transition to digital commerce platforms</p>
+                        <ul>
+                            <li>IndiaMART listing support</li>
+                            <li>Amazon Global setup</li>
+                            <li>Government e-Marketplace (GeM)</li>
+                            <li>E-commerce strategy</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="mkt2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#8b5cf6"/>
+                                    <stop offset="100%" style="stop-color:#6366f1"/>
+                                </linearGradient>
+                            </defs>
+                            <path d="M 30 60 L 50 30 L 70 60 Z" fill="url(#mkt2)" opacity="0.3"/>
+                            <path d="M 40 60 L 50 45 L 60 60 Z" fill="url(#mkt2)"/>
+                        </svg>
+                        <h4>Product Mix Optimization</h4>
+                        <p>Strategic shift to high-value products</p>
+                        <ul>
+                            <li>Move beyond basic innerwear</li>
+                            <li>Activewear development</li>
+                            <li>Technical textiles (compression)</li>
+                            <li>Sustainable product lines</li>
+                        </ul>
+                        <div class="value-badge">High-Margin Growth</div>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="mkt3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#10b981"/>
+                                    <stop offset="100%" style="stop-color:#059669"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="25" fill="url(#mkt3)" opacity="0.2"/>
+                            <path d="M 50 30 L 50 70 M 30 50 L 70 50" stroke="url(#mkt3)" stroke-width="3"/>
+                            <circle cx="50" cy="50" r="5" fill="url(#mkt3)"/>
+                        </svg>
+                        <h4>Export Consultancy</h4>
+                        <p>Navigate international trade opportunities</p>
+                        <ul>
+                            <li>IEC (Import-Export Code) support</li>
+                            <li>Duty Drawback scheme guidance</li>
+                            <li>Bharat Tex participation</li>
+                            <li>International buyer connections</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <svg class="service-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="mkt4" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#f59e0b"/>
+                                    <stop offset="100%" style="stop-color:#d97706"/>
+                                </linearGradient>
+                            </defs>
+                            <rect x="30" y="30" width="40" height="40" rx="5" fill="url(#mkt4)" opacity="0.2"/>
+                            <circle cx="45" cy="45" r="6" fill="url(#mkt4)"/>
+                            <circle cx="55" cy="55" r="6" fill="url(#mkt4)"/>
+                            <path d="M 45 45 L 55 55" stroke="url(#mkt4)" stroke-width="2"/>
+                        </svg>
+                        <h4>Sustainable Textile Solutions</h4>
+                        <p>Eco-friendly product development</p>
+                        <ul>
+                            <li>Bamboo-blend hosiery</li>
+                            <li>Organic cotton products</li>
+                            <li>Recycled fiber integration</li>
+                            <li>Green manufacturing practices</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p style="font-size: 1.15rem; color: var(--text-main);">Ready to transform your hosiery unit? Let's discuss your growth strategy</p>
+            </div>
+            
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <p>We specialize in:</p>
+                    <ul>
+                        <li>Technical Production Advisory</li>
+                        <li>ZED/ISO Certification Support</li>
+                        <li>Government Subsidy Applications</li>
+                        <li>Export Market Entry</li>
+                        <li>Digital Transformation</li>
+                    </ul>
+                    <p style="margin-top: 30px;"><strong>Email:</strong> consult@textilehosiery.in<br>
+                    <strong>Phone:</strong> +91-98765-43210<br>
+                    <strong>WhatsApp:</strong> +91-98765-43210<br>
+                    <strong>Locations:</strong> New Delhi / Tirupur / Ludhiana</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Interest</label>
+                            <select id="service" class="form-input">
+                                <option>Technical & Production Consultancy</option>
+                                <option>Quality Control & Compliance</option>
+                                <option>Financial & Government Schemes</option>
+                                <option>Market Expansion & Digital</option>
+                                <option>Complete MSME Transformation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-input" rows="5" placeholder="Tell us about your unit and requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Schedule Consultation →</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-size: 1rem; margin-bottom: 15px;">&copy; 2026 Textile Hosiery Consultancy Services. All Rights Reserved.</p>
+            <p style="font-size: 0.9rem; opacity: 0.8;">Serving Ludhiana, Tirupur, Kolkata, and major textile hubs across India</p>
+            <p style="font-size: 0.85rem; margin-top: 20px; opacity: 0.7;">
+                <a href="#services">Services</a> · 
+                <a href="#contact">Contact</a> · 
+                <a href="#">Privacy Policy</a> · 
+                <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
